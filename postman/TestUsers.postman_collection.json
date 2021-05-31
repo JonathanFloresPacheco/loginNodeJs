@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "2c13675e-5ddc-4296-abb3-7f0c6e5ae48f",
+		"name": "TestUsers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwt}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{test_url}}/users/find/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaWQiOiIxOTY3NDZhNC1hYWE2LTRkNjUtYjc3YS0xN2QwZjIzNjVkMTAiLCJlbWFpbDAiOiJqb25hdGhhbi5mbG9yZXMuaXNjQGdtYWlsLmNvbSIsIl9yb2wiOiJVU0VSIiwiaWF0IjoxNjIyNTA0MDYyLCJleHAiOjE2MjI1OTA0NjJ9.1bpWTU6NuN1BzMsoLuDUIYrLoioQAsMuY-hEKjIq_a4",
+					"host": [
+						"{{test_url}}"
+					],
+					"path": [
+						"users",
+						"find",
+						"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaWQiOiIxOTY3NDZhNC1hYWE2LTRkNjUtYjc3YS0xN2QwZjIzNjVkMTAiLCJlbWFpbDAiOiJqb25hdGhhbi5mbG9yZXMuaXNjQGdtYWlsLmNvbSIsIl9yb2wiOiJVU0VSIiwiaWF0IjoxNjIyNTA0MDYyLCJleHAiOjE2MjI1OTA0NjJ9.1bpWTU6NuN1BzMsoLuDUIYrLoioQAsMuY-hEKjIq_a4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Jonathan Flores Pacheco\",\r\n    \"email\": \"jonathanflores159@gmail.com\",\r\n    \"password\": \"dijisd9191\",\r\n    \"role\": \"ADMIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{test_url}}/users/adduser/",
+					"host": [
+						"{{test_url}}"
+					],
+					"path": [
+						"users",
+						"adduser",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"jonathan.flores.isc@gmail.com\",\r\n    \"password\": \"dijisd9191\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{test_url}}/users/login/",
+					"host": [
+						"{{test_url}}"
+					],
+					"path": [
+						"users",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "test_url",
+			"value": "localhost:3005"
+		},
+		{
+			"key": "jwt",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaWQiOiIzOTE1OWY1Ny03MTk5LTRhY2YtYmJkNi1iYjY4MTRmNDc0YzAiLCJlbWFpbDAiOiJqb25hdGhhbmZsb3JlczE1OUBnbWFpbC5jb20iLCJfcm9sIjoiQURNSU4iLCJpYXQiOjE2MjI1MDQ2MDIsImV4cCI6MTYyMjU5MTAwMn0.neT9fXqtYZhUe0i_XiOTdRg6EYnGpPU2wxtSVRwFXe0"
+		}
+	]
+}
